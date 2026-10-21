@@ -25,7 +25,7 @@
 class Abdul:
     role       = "AI/ML Engineer · Software Integration & Deployment Intern @ Think3DDD"
     studying   = "B.Sc. Computer Science @ SRH Berlin"
-    also       = ["AI consultant", "ML · Python · Java tutor (high school → postgrad)"]
+    also       = ["AI consultant", "ML · Python  tutor (high school → postgrad)"]
     speaks     = ["English", "Urdu", "Hindi", "German (learning)"]
     philosophy = "If it isn't measured, it isn't done."
     looking_for = "AI Engineering Werkstudent / intern roles — Berlin or remote"
