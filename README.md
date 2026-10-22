@@ -13,7 +13,6 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abdul-muhaimin-khan-b37a27357)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abdul.muhaimin.khan.official@gmail.com)
 ![Berlin](https://img.shields.io/badge/Berlin-Germany-000000?style=for-the-badge&logo=googlemaps&logoColor=white)
-![Profile views](https://komarev.com/ghpvc/?username=AbdulMuhaiminKhan&style=for-the-badge&color=36BCF7&label=VIEWS)
 
 </div>
 
