@@ -1,5 +1,5 @@
 <!-- Header banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=180&section=header&text=Abdul%20Muhaimin%20Khan&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20Engineer%20%C2%B7%20&descAlignY=58&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=180&section=header&text=Abdul%20Muhaimin%20Khan&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20Engineer%20%C2%B7%20LLM%20Systems%20%26%20Evals&descAlignY=58&descSize=18" width="100%"/>
 
 <div align="center">
 
@@ -10,7 +10,7 @@
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abdul-muhaimin-khan-b37a27357)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/abdulmuhaiminkhan)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:abdul.muhaimin.khan.official@gmail.com)
 ![Berlin](https://img.shields.io/badge/Berlin-Germany-000000?style=for-the-badge&logo=googlemaps&logoColor=white)
 
@@ -22,9 +22,9 @@
 
 ```python
 class Abdul:
-    role       = "AI/ML Engineer · Software Integration & Deployment Intern @ Think3DDD"
+    role       = "AI Engineer · ex Software Integration & Deployment Intern @ Think3DDD"
     studying   = "B.Sc. Computer Science @ SRH Berlin"
-    also       = ["AI consultant", "ML · Python  tutor (high school → postgrad)"]
+    also       = ["AI consultant", "AI/ML · Python tutor (high school → postgrad)"]
     speaks     = ["English", "Urdu", "Hindi", "German (learning)"]
     philosophy = "If it isn't measured, it isn't done."
     looking_for = "AI Engineering Werkstudent / intern roles — Berlin or remote"
@@ -37,23 +37,25 @@ class Abdul:
 > One rule across every project: every system ships with an evaluation harness. Click a project to expand.
 
 <details>
-<summary><b>🤖 Agentic Code Reviewer</b> — an LLM agent that reviews code like a senior engineer</summary>
+<summary><b>🤖 Agentic Code Reviewer</b> — multi-agent PR reviewer, backtested on real CVEs</summary>
 <br/>
 
-- **What:** Agent that reads code changes and flags bugs, risks and style issues
-- **Why it matters:** Shows multi-step agent design and tool use, not just one prompt
-- **Stack:** Python · LLM tool use
+- **What:** Specialist agents review pull requests for security, error handling and test coverage, then post a PR comment
+- **Eval:** Backtested on 79 real vulnerabilities from GitHub Security Advisories, with a held-out test set, patched-code controls and human labels
+- **Cost:** $0, runs fully on a local model
+- **Stack:** Python · LangGraph · Ollama (`qwen2.5-coder:7b`) · Streamlit · GitHub API
 
-👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/agentic-code-reviewer)
+👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/Agentic-Code-Reviewer) · [**Live demo PRs**](https://github.com/AbdulMuhaiminKhan/acr-demo-shop/pulls)
 </details>
 
 <details>
 <summary><b>📚 RAG with Eval Harness</b> — retrieval QA you can actually trust</summary>
 <br/>
 
-- **What:** Retrieval-augmented question answering with automated evaluation of retrieval and answer quality
+- **What:** RAG over the Kubernetes docs with a full evaluation harness
+- **Eval:** 24-config ablation, bootstrap confidence intervals, a calibrated LLM judge and a CI regression gate
 - **Why it matters:** Most RAG demos never measure if answers are grounded. This one does.
-- **Stack:** Python · embeddings · vector search
+- **Stack:** Python · BM25 · dense retrieval · reranking · runs locally
 
 👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/rag-eval-harness)
 </details>
@@ -62,32 +64,33 @@ class Abdul:
 <summary><b>🔌 MCP Server + Tool-Selection Evals</b> — does the model pick the right tool?</summary>
 <br/>
 
-- **What:** A Model Context Protocol server plus an eval harness for tool-selection accuracy
-- **Twist:** Improved accuracy by rewriting tool descriptions, then re-measuring
-- **Stack:** Python · MCP
+- **What:** A read-only GitHub MCP server plus a tool-selection benchmark
+- **Result:** 63% → 95% tool-selection accuracy on a local 7B model, with an ablation of where the gain came from
+- **Stack:** Python · MCP SDK · Ollama · Docker
 
-👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/mcp-server)
+👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/github-mcp) · [**Project page**](https://abdulmuhaiminkhan.github.io/github-mcp/)
 </details>
 
 <details>
 <summary><b>🔒 Privacy-First LLM Eval</b> — fully offline, zero data leaves the machine</summary>
 <br/>
 
-- **What:** Offline harness comparing plain text vs JSON mode vs schema-constrained output from small local LLMs
+- **What:** Controlled offline experiment comparing plain text vs JSON mode vs schema-constrained output from small local LLMs
+- **Scale:** 540 answers across 3 models, with calibration and latency analysis
 - **Why it matters:** Structured output reliability is what breaks LLM apps in production
-- **Stack:** Python · Ollama · Pydantic
+- **Stack:** Python · Ollama · Pydantic · Streamlit
 
-👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/privacy-first-llm-eval)
+👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/privacy-first-llm-eval) · [**Project page**](https://abdulmuhaiminkhan.github.io/privacy-first-llm-eval/)
 </details>
 
 <details>
-<summary><b>🗄️ Text-to-SQL</b> — ask a database questions in plain English</summary>
+<summary><b>🗄️ Text-to-SQL Clarification Engine</b> — asks before it guesses</summary>
 <br/>
 
-- **What:** Turns natural-language questions into SQL over a real database, with accuracy checks
-- **Stack:** Python · PostgreSQL · LLMs
+- **What:** Turns natural-language questions into SQL, and asks a targeted clarifying question when a query is ambiguous instead of guessing
+- **Stack:** Python · Pydantic · SQLAlchemy · MySQL · Groq · Docker
 
-👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/text-to-sql)
+👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/text2sql-clarification-engine)
 </details>
 
 <details>
@@ -102,13 +105,39 @@ class Abdul:
 👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/study-helper-agent)
 </details>
 
+<details>
+<summary><b>🎤 SmartSpeaking</b> — a free, private AI public-speaking coach</summary>
+<br/>
+
+- **What:** Record a talk and get pace, pauses, filler words, voice, eye contact and posture feedback, each marked at the moment it happened, with drills to fix it
+- **Privacy:** Runs entirely on your own computer with free open-source models
+- **Languages:** English · Deutsch · Urdu
+- **Stack:** React · FastAPI · Whisper · MediaPipe · Ollama · Docker
+
+👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/smart-speaking)
+</details>
+
+<details>
+<summary><b>🥦 The Fridge Graveyard</b> — rescue your groceries before they become a cold case</summary>
+<br/>
+
+- **What:** Food-waste app for students and shared flats: expiry-first fridge, receipt scanning, rescue recipes, a weekly meal planner and shared households
+- **Stack:** Python · FastAPI · React · Tailwind · SQLite · pytest
+
+👉 [**View repo**](https://github.com/AbdulMuhaiminKhan/fridge-graveyard)
+</details>
+
+<br/>
+
+**More builds:** [🔖 Bookmark Manager](https://github.com/AbdulMuhaiminKhan/bookmark-manager) (Django · Docker · Kubernetes) · [📡 FTP Server & Client](https://github.com/AbdulMuhaiminKhan/FTP-server-and-client) (Python networking) · [🚀 Spaceship Game](https://github.com/AbdulMuhaiminKhan/Spaceship-game) (Pygame)
+
 ---
 
 ### 🧰 Tech Stack
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=python,java,nodejs,fastapi,django,postgres,redis,docker,nginx,flutter,linux,git&theme=dark" />
+<img src="https://skillicons.dev/icons?i=python,java,nodejs,react,fastapi,django,postgres,mysql,redis,docker,kubernetes,nginx,flutter,linux,git&theme=dark" />
 
 <br/><br/>
 
@@ -143,7 +172,7 @@ class Abdul:
 
 <div align="center">
 
-**💬 Ask me about:** building RAG that doesn't hallucinate, evaluating LLM outputs, MCP, or learning Python.
+**💬 Ask me about:** building RAG that doesn't hallucinate, evaluating LLM outputs, MCP, local LLMs, or learning Python.
 
 </div>
 
